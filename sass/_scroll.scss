@@ -1,0 +1,37 @@
+.nicescroll-rails {
+	&:hover {
+		cursor: pointer!important;
+	}
+	right: 5px;
+	>div {
+		background-color: $main-clr!important;
+
+	}
+}
+
+.veterinary {
+	.nicescroll-rails {
+		>div {
+			background-color: #3fb094!important;
+
+		}
+	}
+}
+
+.dental {
+	.nicescroll-rails {
+		>div {
+			background-color: #4460a7!important;
+
+		}
+	}
+}
+
+.pharm {
+	.nicescroll-rails {
+		>div {
+			background-color: #00a1b2!important;
+
+		}
+	}
+}

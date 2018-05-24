@@ -1,0 +1,58 @@
+/* --------------------------------------------------------------------------------------
++
++ VARIABLES
++
+-------------------------------------------------------------------------------------- */
+
+//GLOBAL VARIABLES
+
+$experimental-support-for-svg:          true;
+
+//Basic colors
+$header-bgr:                            #fff;
+$footer-bgr:							#fff;
+$base-font:                             "Ubuntu", sans-serif;
+$second-font:                           "Open Sans", sans-serif;
+
+$base-font-size:                        14px;
+$base-line-height:                      1.5;
+
+$base-clr:                            	#fff;
+$main-clr:                            	#00a2e3;
+$second-clr:                            #585864;
+$third-clr:                             $second-clr;
+$fourth-clr:                            #0094CF;
+$fifth-clr:                             #f85800;
+$bg-clr-elements:                       #f1f1f5;
+
+$rgba-clr:                              rgba(0, 162, 227, 0.75);
+$rgba1-clr:                             rgba(0, 162, 227, 0.85);
+$rgba2-clr:                              rgba(0, 162, 227, 0.65);
+
+$text-clr: 								#fff;
+$title-clr:								#fff;
+$link-clr:								#848484;
+$link-hover:							#fff;
+
+$border:								#fff;
+
+$footer-clr:							#fff;
+
+$input-clr:								$second-clr;
+$input-bgr:								$bg-clr-elements;
+
+$btn-clr:								#fff;
+$btn-bgr:								#fff;
+$btn-hover:								#fff;
+
+
+//LAYOUT
+$space:                          		15px;
+$page-width:                            1170px;
+$radius:								5px;
+
+
+//SELECT TEXT
+$selected-text-bgr:						#000;
+$selected-text-clr:						#fff;
+

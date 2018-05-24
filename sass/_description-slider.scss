@@ -1,0 +1,46 @@
+	
+#description {
+	
+
+	.rslides {
+	  position: relative;
+	  list-style: none;
+	  overflow: hidden;
+	  width: 100%;
+	  padding: 0;
+	  margin: 0;
+	  height: 100%;
+	}
+
+	.rslides li {
+	  -webkit-backface-visibility: hidden;
+	  position: absolute;
+	  display: none;
+	  width: 100%;
+	  left: 0;
+	  top: 0;
+	  height: 100%;
+	  display: table;
+	  text-align: center;
+	  
+	}
+
+	.rslides li:first-child {
+	  position: relative;
+	  display: table;
+	  height: 100%;
+	  float: left;
+	}
+
+	.rslides_nav {
+		position: absolute;
+		top: 50%;
+		margin-top: -16px;
+		@include ht;
+		width: 20px;
+		height: 40px;
+		z-index: 5;
+		@include nt;
+	}
+
+}

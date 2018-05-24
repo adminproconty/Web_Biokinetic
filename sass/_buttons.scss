@@ -1,0 +1,40 @@
+/* --------------------------------------------------------------------------------------
++
++ BUTTONS
++
+-------------------------------------------------------------------------------------- */
+
+.btn {
+    text-align: center;
+    // border: none;
+    @include radius;
+    @include transition(all .3s ease);
+    font-family: $base-font;
+    display: inline-block;
+    @include bs;
+    &.small {  
+        padding: 0 12px;
+        height: 34px;
+        line-height: 32px;
+        font-size: 12px;
+        border: 2px solid $main-clr;
+        color: $main-clr;
+        &:hover {
+            background: $main-clr;
+            color: #fff;
+            border: 2px solid $main-clr;
+
+        }
+    }
+
+    &.medium {  
+        padding: 0 18px;
+        height: 50px;
+        line-height: 48px;
+        border: 2px solid #fff;
+        color: #fff;
+        background-color: transparent;
+    }
+
+    // &.large {  }
+}

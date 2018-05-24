@@ -1,0 +1,364 @@
+// /* --------------------------------------------------------------------------------------
+// +
+// + Slider1
+// +
+// -------------------------------------------------------------------------------------- */
+
+
+
+#about {
+
+	/* 
+	 *  Owl Carousel - Animate Plugin
+	 */
+	.owl-carousel .animated {
+	  -webkit-animation-duration: 1000ms;
+	  animation-duration: 1000ms;
+	  -webkit-animation-fill-mode: both;
+	  animation-fill-mode: both;
+	}
+	.owl-carousel .owl-animated-in {
+	  z-index: 0;
+	}
+	.owl-carousel .owl-animated-out {
+	  z-index: 1;
+	}
+	.owl-carousel .fadeOut {
+	  -webkit-animation-name: fadeOut;
+	  animation-name: fadeOut;
+	}
+
+	@-webkit-keyframes fadeOut {
+	  0% {
+	    opacity: 1;
+	  }
+
+	  100% {
+	    opacity: 0;
+	  }
+	}
+	@keyframes fadeOut {
+	  0% {
+	    opacity: 1;
+	  }
+
+	  100% {
+	    opacity: 0;
+	  }
+	}
+
+	/* 
+	 *  Owl Carousel - Auto Height Plugin
+	 */
+	.owl-height {
+	  -webkit-transition: height 500ms ease-in-out;
+	  -moz-transition: height 500ms ease-in-out;
+	  -ms-transition: height 500ms ease-in-out;
+	  -o-transition: height 500ms ease-in-out;
+	  transition: height 500ms ease-in-out;
+	}
+
+	/* 
+	 *  Core Owl Carousel CSS File
+	 */
+	.owl-carousel {
+	  display: none;
+	  width: 100%;
+	  -webkit-tap-highlight-color: transparent;
+	  /* position relative and z-index fix webkit rendering fonts issue */
+	  position: relative;
+	  z-index: 1;
+	}
+	.owl-carousel .owl-stage {
+	  position: relative;
+	  -ms-touch-action: pan-Y;
+	}
+	.owl-carousel .owl-stage:after {
+	  content: ".";
+	  display: block;
+	  clear: both;
+	  visibility: hidden;
+	  line-height: 0;
+	  height: 0;
+	}
+	.owl-carousel .owl-stage-outer {
+	  position: relative;
+	  overflow: hidden;
+	  /* fix for flashing background */
+	  -webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	.owl-carousel .owl-controls .owl-nav .owl-prev,
+	.owl-carousel .owl-controls .owl-nav .owl-next,
+	.owl-carousel .owl-controls .owl-dot {
+	  cursor: pointer;
+	  cursor: hand;
+	  -webkit-user-select: none;
+	  -khtml-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	}
+	.owl-carousel.owl-loaded {
+	  display: block;
+	}
+	.owl-carousel.owl-loading {
+	  opacity: 0;
+	  display: block;
+	}
+	.owl-carousel.owl-hidden {
+	  opacity: 0;
+	}
+	.owl-carousel .owl-refresh .owl-item {
+	  display: none;
+	}
+	.owl-carousel .owl-item {
+	  position: relative;
+	  min-height: 1px;
+	  float: left;
+	  -webkit-backface-visibility: hidden;
+	  -webkit-tap-highlight-color: transparent;
+	  -webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+		.item {
+			position: relative;
+			height: auto;
+			text-align: center;
+			cursor: move;
+			min-height: 150px;
+			div {
+				@include box(100px);
+				overflow: hidden;
+				margin: 0 auto;
+				@include t(.3s);
+				display: inline-block;
+				position: absolute!important;
+				left: 50%;
+				top: 15px;
+				z-index: 999;
+				@include pie(50%);
+				-ms-transform: translate(-50%,0); /* IE 9 */
+			    -webkit-transform: translate(-50%,0); /* Chrome, Safari, Opera */
+			    transform: translate(-50%,0);
+				border: 2px solid #b8b8cf;
+				-webkit-box-sizing: border-box;
+				   -moz-box-sizing: border-box;
+				        box-sizing: border-box;
+				span {
+					color: #b8b8cf;
+					@include t(.3s);
+					
+				}
+				&:hover {
+					@include pie(50%);
+					background-color: $main-clr;
+					@include box(130px);
+					border: none;
+					text-align:center;
+					top: 0;
+					span {
+
+						color: #fff!important;
+					}
+				}
+			}
+			h4 {
+				color: #fff;
+				@include t (.5s);
+				padding-top:180px!important;
+				font-weight: 500;
+				position: relative;
+				@include bs;
+				padding: 0 20%;
+				display: block;
+				text-align: center;
+				 
+			}
+			p {
+				@include fadeout;
+				@include nt;
+				margin-bottom: 0;
+			}
+			
+		}
+
+	 	.about-icon1 {
+			span {
+				margin-top: 18px;
+				font-size: 71px;
+			}
+		}
+		.about-icon2 {
+			span {
+				margin-top: 24px;
+				font-size: 43px;
+			}
+		}
+		.about-icon3 {
+			span {
+				margin-top: 20px;
+				font-size:56px;
+			}
+		}
+		// // h4 {
+		// // 	color: $main-clr;
+		// // 	display: block;
+		// // 	text-align: center;
+		// // 	margin-bottom: 0; 
+			
+		// // }
+		&.center {
+			.item {
+				div {
+					@include pie(50%);
+					background-color: $main-clr;
+					@include box(130px);
+					border: none;
+					top: 0;
+					span {
+						color: #fff!important;
+					}
+					&:hover {
+						margin-top: 0;
+					}
+				}
+				h4 {
+					color: $main-clr;
+					display: block;
+					text-align: center;
+					margin-bottom: 0;
+					
+				}
+				.about-icon1 {
+					span {
+						margin-top: 26px;
+						font-size: 93px;
+					}
+				}
+				.about-icon2 {
+					span {
+						margin-top: 38px;
+						font-size: 53px;
+					}
+				}
+				.about-icon3 {
+					span {
+						margin-top: 26px;
+						font-size:76px;
+					}
+				}
+			}
+			p {
+				@include fadein;
+				color: #848484;
+				position: relative;
+				width: 200%;
+				margin-top: 65px;
+				-ms-transform: translate(-25%,0); /* IE 9 */
+			    -webkit-transform: translate(-25%,0); /* Chrome, Safari, Opera */
+			    transform: translate(-25%,0);
+				font-size: 14px;
+				line-height:1.5 ;
+			}
+		}
+		.about-icon1:hover {
+			span {
+				margin-top: 26px;
+				font-size: 93px;
+			}
+		}
+		.about-icon2:hover {
+			span {
+				margin-top: 38px;
+				font-size: 53px;
+			}
+		}
+		.about-icon3:hover {
+			span {
+				margin-top: 26px;
+				font-size:76px;
+			}
+		}
+	}
+	.owl-grab {
+
+	}
+}
+
+
+.veterinary {
+    #about {
+    	.owl-carousel .owl-item {
+    		.item {
+	    		div {
+					&:hover {
+						background-color: #3fb094;
+					}
+	    		}
+    			
+    		}
+	    	&.center {
+				.item { 
+					div {
+						background-color: #3fb094;
+					}
+	    			h4 {
+	    				color: #3fb094;
+	    			}
+				}
+			}
+		}
+    }
+}
+
+.dental {
+    #about {
+    	.owl-carousel .owl-item {
+    		.item {
+	    		div {
+					&:hover {
+						background-color: #4460a7;
+					}
+	    		}
+    			
+    		}
+	    	&.center {
+				.item { 
+					div {
+						background-color: #4460a7;
+					}
+	    			h4 {
+	    				color: #4460a7;
+	    			}
+				}
+			}
+		}
+    }
+}
+
+.pharm {
+    #about {
+    	.owl-carousel .owl-item {
+    		.item {
+	    		div {
+					&:hover {
+						background-color: #00a1b2;
+					}
+	    		}
+    			
+    		}
+	    	&.center {
+				.item { 
+					div {
+						background-color: #00a1b2;
+					}
+	    			h4 {
+	    				color: #00a1b2;
+	    			}
+				}
+			}
+		}
+    }
+}

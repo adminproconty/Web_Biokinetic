@@ -1,0 +1,80 @@
+/* --------------------------------------------------------------------------------------
++
++ FOOTER
++
+-------------------------------------------------------------------------------------- */
+footer {
+	background-color: $footer-bgr;
+	padding: 30px 0;
+	text-align: center;
+	width: 100%;
+	ul {
+		margin-bottom: 15px;
+		
+	}
+	li {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+	}
+	li+li {
+		margin-left: 20px;
+		
+	}
+	a {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		font-size: 16px;
+		@include pie(50%);
+		border:2px solid $third-clr;
+		&:hover {
+			border:2px solid $main-clr;
+			background-color: $main-clr;
+		}
+	}
+	span {
+		margin-top: 8px;
+		display: block;
+	}
+	small {
+		color: $third-clr;
+		font-family: $second-font;
+	}
+}
+
+.veterinary {
+	footer {
+		a {
+			&:hover {
+				border:2px solid #3fb094;
+				background-color: #3fb094;
+			}
+		}
+		
+	}
+}
+
+.dental {
+	footer {
+		a {
+			&:hover {
+				border:2px solid #4460a7;
+				background-color: #4460a7;
+			}
+		}
+		
+	}
+}
+
+.pharm {
+	footer {
+		a {
+			&:hover {
+				border:2px solid #00a1b2;
+				background-color: #00a1b2;
+			}
+		}
+		
+	}
+}

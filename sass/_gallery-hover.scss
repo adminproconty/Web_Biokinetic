@@ -1,0 +1,33 @@
+.da-thumbs {
+	list-style: none;
+	position: relative;
+	margin: 20px auto;
+	padding: 0;
+}
+.da-thumbs .mix {
+	float: left;
+	position: relative;
+	
+}
+.da-thumbs .mix a,
+.da-thumbs .mix a img {
+	display: block;
+	position: relative;
+}
+.da-thumbs .mix a {
+	overflow: hidden;
+}
+.da-thumbs .mix a div {
+	position: absolute;
+	background: $rgba-clr;
+	width: 100%;
+	height: 100%;
+}
+.da-thumbs .mix a div span {
+	display: block;
+	background-image: url('../images/plus.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 100%;
+	height:100%;
+}

@@ -1,0 +1,177 @@
+/* --------------------------------------------------------------------------------------
++
++ BASIC STYLES
++
+-------------------------------------------------------------------------------------- */
+
+@import "compass";
+@import "compass/reset";
+@import "variables";
+@import "mixins";
+
+//SETTING UP MAIN ELEMENTS
+html {
+    overflow-x:hidden!important;
+    overflow-y:auto!important; 
+}
+
+body {
+    color: $text-clr;
+    font-family: $base-font;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    -webkit-font-smoothing: antialiased;
+    min-width: $page-width;
+    #preloader {
+        position: fixed; 
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999999999;
+        background: url('../images/preloader.gif') 50% 50% no-repeat #fff;
+    }      
+    // * {
+    //     -webkit-backface-visibility:hidden; /* Chrome and Safari */
+    // }
+    &.veterinary {
+        #preloader {
+            background: url('../images/preloader1.gif') 50% 50% no-repeat #fff;
+        } 
+        
+    }
+    &.pharm { 
+        #preloader {
+            background: url('../images/preloader2.gif') 50% 50% no-repeat #fff;
+        } 
+        
+    }
+    &.dental {
+        #preloader {
+            background: url('../images/preloader3.gif') 50% 50% no-repeat #fff;
+        } 
+        
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+    font-family: $base-font;
+    color: $title-clr;
+    margin-bottom: $space;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 24px;
+}
+h6 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+a {
+    outline: none;  /* removing outline in Mozilla */
+    @include transition(all .2s ease);
+    text-decoration: none;
+    color: $link-clr;
+    &:active {
+        background-color: transparent;
+    }
+    &:hover {
+        color: $link-hover;
+    }
+}
+
+p {
+    margin-bottom: $space;
+    clear: both;
+    font-family: $second-font;
+}
+
+small {
+    font-size: 12px;
+}
+
+img {
+    vertical-align: top;
+}
+
+table {
+    width: 100%;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+//CLEARING FLOAT (always extend .clearfix class)
+.clearfix {
+    @include pie-clearfix;
+}
+
+//SELECTED TEXT
+@include selected-text;
+
+//HIDE CLASS
+.hide {
+    display: none !important;
+}
+
+//SETTING FORM ELEMENTS
+button:hover,
+input[type="submit"]:hover,
+label {
+    cursor: pointer;
+}
+
+textarea {
+    margin: 0;             /* removing margin in Mozilla */
+    overflow: auto;        /* for IE and older browsers */
+}
+
+/* align checkboxes, radios, text inputs with their label */
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+    *vertical-align: baseline;
+}
+
+//removing webkit outline
+input:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+//removing odd button padding/margin in Mozilla
+button::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.angle45 {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+} 

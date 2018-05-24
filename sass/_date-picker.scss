@@ -1,0 +1,99 @@
+ #ui-datepicker-div {
+	background-color:#fff; 
+	width: 310px;
+	margin-top: 4px;
+	@include bs;
+	display: none;
+	padding:10px;
+	text-align: center;
+	@include pie(5px);
+	border: 2px solid $main-clr;
+	.ui-datepicker-header {
+		position: relative;
+		height: 40px;
+		@include pie(5px);
+		background-color: $second-clr;
+		.ui-corner-all {
+			@include ht;
+			@include box(40px);
+			cursor: pointer;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+		.ui-datepicker-prev {
+			float: left;
+			background-image: url('../images/arrow-left.png');
+		}
+		.ui-datepicker-next {
+			float: right;
+			background-image: url('../images/arrow-right.png');
+		}
+	}
+	.ui-datepicker-title {
+		height: 40px;
+		line-height: 40px;
+		font-size: 15px;
+		font-weight: 700;
+	}
+	.ui-datepicker-calendar {
+		margin-top: 10px;
+		
+		thead {
+			th {
+				text-align: center;
+				color: $main-clr;
+			}
+		}
+		tbody {
+			td {
+				text-align: center;
+				a {
+					font-weight: 500;
+					&:hover {
+						font-weight: 700;
+						color: $link-clr;
+					}
+				}
+			}
+		}
+	}
+}
+
+.veterinary {
+	#ui-datepicker-div { 
+		border-color: #3fb094!important;
+	 	.ui-datepicker-calendar {
+			thead {
+				th {
+					color: #3fb094!important;
+				}
+			}
+		}
+	}
+}
+
+.dental {
+	#ui-datepicker-div { 
+		border-color: #4460a7!important;
+	 	.ui-datepicker-calendar {
+			thead {
+				th {
+					color: #4460a7!important;
+				}
+			}
+		}
+	}
+}
+
+.pharm {
+	#ui-datepicker-div { 
+		border-color: #00a1b2!important;
+	 	.ui-datepicker-calendar {
+			thead {
+				th {
+					color: #00a1b2!important;
+				}
+			}
+		}
+	}
+}

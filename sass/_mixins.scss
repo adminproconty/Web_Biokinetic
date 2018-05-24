@@ -1,0 +1,205 @@
+/* --------------------------------------------------------------------------------------
++
++ MIXINS
++
+-------------------------------------------------------------------------------------- */
+
+//SELECTED TEXT MIXIN
+@mixin selected-text {
+    ::-moz-selection {
+        background: $selected-text-bgr;
+        color: $selected-text-clr;
+        text-shadow: none;
+    }
+    ::selection {
+        background: $selected-text-bgr;
+        color: $selected-text-clr;
+        text-shadow: none;
+    }
+}
+
+//UNSELECTABLE
+@mixin unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+//PLACEHOLDER INPUT
+@mixin input-placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+@mixin clear {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }    
+}
+
+@mixin box($var) {
+    width: $var;
+    height: $var;
+    display: block;
+}
+@mixin t($var) {
+    @include transition(all $var ease);
+}
+@mixin nt {
+    @include transition(none);
+}
+
+@mixin pie($rad) {
+    behavior: url("../PIE.htc");
+    position: relative;
+    @include border-radius($rad);
+}
+
+@mixin cover {
+    @include background-size(cover);
+    -ms-behavior: url(../js/backgroundsize.htc);
+}
+
+/* Borders */
+@mixin bd { border: 1px solid $border; }
+@mixin bdt { border-top: 1px solid $border; }
+@mixin bdb { border-bottom: 1px solid $border; }
+@mixin bdl { border-left: 1px solid $border; }
+@mixin bdr { border-right: 1px solid $border; }
+
+@mixin radius {
+    @include border-radius($radius);
+    @include background-clip();
+}
+
+@mixin circle {
+    @include border-radius(50%);
+    @include background-clip();
+}
+
+@mixin curve($rad) {
+    @include border-radius($rad);
+    @include background-clip();    
+}
+
+@mixin borders {
+    @include border-radius($radius);
+    @include background-clip();
+    border: 1px solid $border;
+}
+
+/* hover opacity *///
+@mixin ho($opac) {
+    @include trans;
+
+    &:hover {
+        @include opacity($opac);
+    }
+}
+
+/* hover color */
+@mixin hc($color) {
+    @include trans;
+
+    &:hover {
+        color: $color;
+    }
+}
+
+/* TRIANGLES */
+@mixin triangles {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    border-style: solid;
+    position: absolute;
+}
+
+@mixin fadeout {
+    visibility: hidden;
+    @include opacity(0);
+    @include t(.4s);
+    /* hack for ie8 */
+    opacity: 1\9;
+    visibility: visible\9;
+    display: none\9;    
+}
+@mixin fadein {
+    visibility: visible;
+    @include opacity(1);
+    /* hacks for ie8 */
+    display: block\9;
+}
+
+@mixin tt($w1, $w2, $clr) {
+    @include triangles;
+    border-width: 0 $w1 $w2 $w1;
+    border-color: transparent transparent $clr transparent;
+}
+@mixin tb($w1, $w2, $clr) {
+    @include triangles;
+    border-width: $w2 $w1 0 $w1;
+    border-color: $clr transparent transparent transparent;
+}
+@mixin tr($w1, $w2, $clr) {
+    @include triangles;
+    border-width: $w1 0 $w1 $w2;
+    border-color: transparent transparent transparent $clr;
+}
+@mixin tl($w1, $w2, $clr) {
+    @include triangles;
+    border-width: $w1 $w2 $w1 0;
+    border-color: transparent $clr transparent transparent;
+}
+
+/* LINE-HIGH */
+@mixin lh($line-height) {
+    height: $line-height;
+    line-height: $line-height;
+}
+
+/* BOX SIZING */
+@mixin box-sizing($bs) {
+  $bs: unquote($bs);
+  @include experimental(box-sizing, $bs, -moz, -webkit, not -o, not -ms, not -khtml, official); 
+}
+@mixin bs {
+    @include box-sizing(border-box);
+}
+
+/* HIDE TEXT*/
+@mixin ht {
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    background-color: transparent;
+}
+
+
+// SPRITES
+// $departments-spacing: 10px;
+// $departments-layout: horizontal; //vertical is default, smart(third option)
+// @import "departments/*.png";
+// @include all-departments-sprites(true);
+
+

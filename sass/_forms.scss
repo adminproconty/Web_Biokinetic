@@ -1,0 +1,85 @@
+/* --------------------------------------------------------------------------------------
++
++ FORMS
++
+-------------------------------------------------------------------------------------- */
+
+
+input[type="text"], textarea {
+	vertical-align: middle;
+	border: 2px solid $input-bgr;
+	color: $input-clr;
+	background-color: $input-bgr;
+	padding: 0 22px;
+	@include transition(all .4s ease);
+	@include radius;
+    font-family: $base-font;
+    font-size: $base-font-size;
+    @include lh(50px);
+    @include bs;
+    -webkit-appearance: none; //remove inner box-shadow from iOS devices 
+    box-shadow: none;
+    width: 100%;
+	&:hover, &:focus {
+		background-color: $input-bgr;
+		border: 2px solid $main-clr;
+	}
+    &:invalid {
+        @include box-shadow(none);  /* fixes mozilla red outline (shadow) */
+    }	
+
+    &.error {
+		background-color: #f1f1f5;
+  		border: 2px solid #00a2e3;
+  		color: #585864;
+		@include bs;
+	}
+}
+
+textarea {
+	padding: 5px 10px;
+	line-height: $base-line-height;
+	resize: none;
+	@include bs;
+	border: 2px solid $input-bgr;
+
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+     color: transparent;
+}
+
+.veterinary {
+	input[type="text"], textarea {
+		&:hover, &:focus {
+			// background-color: #3fb094;
+			border: 2px solid #3fb094;
+		}
+		&.error {
+			border: 2px solid #3fb094;
+		}
+	}
+}
+.dental {
+	input[type="text"], textarea {
+		&:hover, &:focus {
+			// background-color: #3fb094;
+			border: 2px solid #4460a7;
+		}
+		&.error {
+			border: 2px solid #4460a7;
+		}
+	}
+}
+
+.pharm {
+	input[type="text"], textarea {
+		&:hover, &:focus {
+			// background-color: #3fb094;
+			border: 2px solid #00a1b2;
+		}
+		&.error {
+			border: 2px solid #00a1b2;
+		}
+	}
+}
