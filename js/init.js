@@ -107,6 +107,150 @@ $(document).ready( function () {
    $('#btn').click(function() {
        $('.popup-email').fadeOut('fast');
    });
+    //Código de validación
+
+   $('#contact-form').submit(function (event){
+          var nombre = $('#name').val();
+          var apellido = $('#lastname').val();
+          var telefono = $('#phone').val();
+          var correo = $('#mail').val();
+          var fecha = $('#date').val();
+          var mensaje = $('#message').val();
+          var especialidad = $('select#e2').val();
+
+          if (nombre == "" || apellido == "" || telefono == "" || correo == "" || fecha == "" || mensaje == "" ||
+          especialidad == "" || nombre == null || apellido == null || telefono == null || correo == null || fecha == null || mensaje == null || especialidad == null ){
+            alert("Por favor llenar los campos requeridos *");
+            if (nombre == "" || nombre == null){
+              $('#name').addClass('error');
+            } else {
+              $('#name').removeClass();              
+            }
+            if (apellido== "" || apellido == null){
+              $('#lastname').addClass('error');
+            } else {
+              $('#lastname').removeClass();              
+            }
+            if (telefono == "" || telefono == null){
+              $('#phone').addClass('error');
+            } else {
+              $('#phone').removeClass();              
+            }
+            if (correo == "" || correo == null){
+              $('#mail').addClass('error');
+            } else {
+              $('#mail').removeClass();              
+            }
+            if (fecha == "" || fecha == null){
+              $('#date').addClass('error');
+            } else {
+              $('#date').removeClass();              
+            }
+            if (mensaje == "" || mensaje == null){
+              $('#message').addClass('error');
+            } else {
+              $('#message').removeClass();              
+            }
+            event.preventDefault();
+          } else {
+            var user = $('input[name=rand]:checked').val();
+
+            if(user === correct) {
+
+                $.ajax({
+
+                    url: 'form_data.php',
+
+                    type: 'POST',
+
+                    dataType: 'json',
+
+                    data: {
+
+                      name: $('#name').val(),
+
+                      lastname: $('#lastname').val(),
+
+                      phone: $('#phone').val(),
+
+                      number: $('#number').val(),
+
+                      department: $('#e2').val(),
+
+                      date: $('#date').val(),
+
+                      mail: $('#mail').val(),
+
+                      message: $('#message').val()
+
+                    },
+
+                    success: function(response) {
+                      event.preventDefault();
+
+                        if(response.status === true) {
+
+                            $('.element p').remove();
+
+                            $('.element').prepend('<p class="success">' + response.msg + '</p>');
+
+                            $('.popup-email').fadeIn('fast');
+
+                            $('#name').prop('value', '');
+
+                            $('#lastname').prop('value', '');
+
+                            $('#phone').prop('value', '');
+
+                            $('#number').prop('value', '');
+
+                            $('#mail').prop('value', '');
+
+                            $('#message').prop('value', '');
+
+                            $('#date').prop('value', '');
+
+                            $('#e2').prop('value', '0');
+
+                            $('input[name=rand]:checked').parent().removeClass('active1');
+
+                            $('input[name=rand]:checked').prop('checked', false);
+
+                        } else {
+
+                            $('.element p').remove();
+
+                            $('.popup-email').fadeIn('fast');
+
+                        }
+
+                    },
+
+                    error: function(XMLHttpRequest, textStatus, errorThrown){
+                      event.preventDefault();  
+                      $('.element p').remove();
+
+                      $('.element').prepend('<p class="danger">'+textStatus+'</p>');
+
+                      $('.popup-email').fadeIn('fast');   
+                    }
+
+                });
+
+            } else {    
+              event.preventDefault();  
+              $('.element p').remove();
+
+              $('.element').prepend('<p class="danger">NO COINCIDE CONFIRMACIÓN</p>');
+
+              $('.popup-email').fadeIn('fast');             
+            }
+          }
+   });
+   //Fin Código de validación
+
+    
+    /*
    $('#contact-form').validate({
         rules: {
             name: "required",
@@ -164,7 +308,7 @@ $(document).ready( function () {
                 $('.element p').remove();
             }
         }
-    }); 
+    }); */
 
     /*-------------------------------------------------*/
     /* =  ADDS MOBILE BROWSER CLASS TO HTML TAG
