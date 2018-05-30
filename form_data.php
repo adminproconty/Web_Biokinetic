@@ -37,11 +37,11 @@
     'Reply-To: '.$email_from."\r\n" .
     'X-Mailer: PHP/' . phpversion();
     if(@mail($email_to, $email_subject, $email_message, $headers)) {
-        $data['status'] = TRUE;
+        $data['status'] = true;
         $data['msg'] = 'TU CITA HA SIDO GENERADA, PRONTO NOS COMUNICAREMOS CONTIGO';
         $data['class'] = 'success';
     } else {
-        $data['status'] = FALSE;
+        $data['status'] = false;
         $data['msg'] = 'Su e-mail no fue enviado. Intente nuevamente';
         $data['class'] = 'error';
     }
